@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Spainner</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .loader {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spainner {
+            height: 70px;
+            width: 70px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .spainner::after,
+        .spainner::before {
+            content: "";
+            border: 3px solid;
+            border-color: royalblue transparent;
+            border-radius: 50%;
+        }
+
+        .spainner::before {
+            height: inherit;
+            width: inherit;
+            animation: outerLoader 1000ms infinite linear;
+        }
+
+        .spainner::after {
+            height: calc(100% - 15px);
+            width: calc(100% - 15px);
+            position: absolute;
+            animation: innerLoader 1000ms infinite linear;
+        }
+
+        @keyframes outerLoader {
+            0% {
+                rotate: 0deg;
+            }
+
+            100% {
+                rotate: 359deg;
+            }
+        }
+
+        @keyframes innerLoader {
+            0% {
+                rotate: 359deg;
+            }
+
+            100% {
+                rotate: 0deg;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <span class="spainner"></span>
+    </div>
+</body>
+
+</html>
