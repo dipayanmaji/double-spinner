@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Double Spainner</title>
+    <title>Double Spinner</title>
 
     <style>
         body {
@@ -19,7 +19,7 @@
             justify-content: center;
         }
 
-        .spainner {
+        .spinner {
             height: 70px;
             width: 70px;
             display: inline-flex;
@@ -28,21 +28,21 @@
             position: relative;
         }
 
-        .spainner::after,
-        .spainner::before {
+        .spinner::after,
+        .spinner::before {
             content: "";
             border: 3px solid;
             border-color: royalblue transparent;
             border-radius: 50%;
         }
 
-        .spainner::before {
+        .spinner::before {
             height: inherit;
             width: inherit;
             animation: outerLoader 1000ms infinite linear;
         }
 
-        .spainner::after {
+        .spinner::after {
             height: calc(100% - 15px);
             width: calc(100% - 15px);
             position: absolute;
@@ -73,7 +73,7 @@
 
 <body>
     <div class="loader">
-        <span class="spainner"></span>
+        <span class="spinner"></span>
     </div>
 </body>
 
